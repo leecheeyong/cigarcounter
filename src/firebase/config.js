@@ -2,9 +2,9 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-console.log(import.meta)
+console.log(import.meta.env.VITE_API_KEY)
 const firebaseConfig = {
-  apiKey: import.meta.env.API_KEY,
+  apiKey: import.meta.env.VITE_API_KEY,
   authDomain: "cigarcounter-f927f.firebaseapp.com",
   projectId: "cigarcounter-f927f",
   storageBucket: "cigarcounter-f927f.firebasestorage.app",
