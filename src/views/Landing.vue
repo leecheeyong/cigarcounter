@@ -57,7 +57,24 @@ const navigateToApp = () => {
         </button>
       </div>
     </section>
-
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          See CigarCounter in Action
+        </h2>
+        <p class="text-gray-600 mb-8">
+          A quick look at how easy it is to track your cigarette or cigar use
+          and monitor progress over time.
+        </p>
+        <div class="overflow-hidden rounded-xl shadow-md">
+          <img
+            src="/preview.webp"
+            alt="CigarCounter App Demo"
+            class="w-full h-auto object-cover"
+          />
+        </div>
+      </div>
+    </section>
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-10">
