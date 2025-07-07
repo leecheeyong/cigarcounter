@@ -4,7 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath, URL } from 'node:url'
 
 // https://vite.dev/config/
-const env = loadEnv(mode, process.cwd(), '')
 export default defineConfig({
   plugins: [vue(), tailwindcss()],
   resolve: {
@@ -13,6 +12,6 @@ export default defineConfig({
     }
   },
   define: {
-    "API_KEY": String(env.API_KEY)
+    "API_KEY": String(process.env.API_KEY)
   }
 })
