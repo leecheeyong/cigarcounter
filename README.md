@@ -13,4 +13,25 @@
 - ❤️ **Health Impact Awareness** – See how each smoke affects your life expectancy.
 - 💶 **Financial Impact Awareness** - Tracking your consumption not only helps your health — it also helps your wallet.
 - 🔐 **Privacy-first** – No ads, no tracking. Your data stays yours.
+- 🌐 **Responsive** – Works on desktop, tablet, and mobile.
 
+## 🚀 Getting Started
+
+### 1. Clone this repository
+```bash
+git clone https://github.com/leecheeyong/cigarcounter.git
+cd cigarcounter
+npm install
+npm run dev
+```
+
+### 2. 🔥 Set up Firebase
+
+- Go to [Firebase Console](https://console.firebase.google.com/) and create a new project.
+- Enable **Authentication** (Email/Password).
+- Set up **Cloud Firestore** in test mode (or with secured rules).
+- Copy your Firebase config.
+
+### 3. 📄 Add Firebase config
+
+Edit the `src/firebase/config.ts` file, replace with your Firebase credentials
