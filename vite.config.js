@@ -15,7 +15,7 @@ export default defineConfig(({mode}) => {
             },
         },
         define: {
-            __API_KEY__: env.API_KEY
+            __API_KEY__: JSON.stringify(env.API_KEY)
         }
     };
 });
