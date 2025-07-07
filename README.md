@@ -1,5 +1,5 @@
-# Vue 3 + Vite
+![](./public/logo.png)
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# CigarCounter 
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+**CigarCounter** is a minimalist, privacy-conscious web app that helps you **track every cigarette or cigar you smoke**. By visualizing your habits and raising awareness about health risks, it’s designed to encourage users to quit smoking through self-awareness — one log at a time.
