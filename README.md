@@ -1,10 +1,13 @@
 <img src="./public/logo.png" width="100"> 
 
-# CigarCounter
+# [CigarCounter](https://cigarcounter.vercel.app/)
 
 **CigarCounter** is a minimalist, privacy-conscious web app that helps you **track every cigarette or cigar you smoke**. By visualizing your habits and raising awareness about health risks, it’s designed to encourage users to quit smoking through self-awareness — one log at a time.
 
 ![preview screenshot](./public/preview.webp)
+
+> [!NOTE]  
+> Give this project a try by signing up an account [here](https://cigarcounter.vercel.app/auth), feedbacks are welcomed in the [issues](https://github.com/leecheeyong/cigarcounter/issues). Give this project a star ⭐ if you like it 😄
 
 ## 🌟 Features
 
