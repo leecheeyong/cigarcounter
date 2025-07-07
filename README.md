@@ -1,4 +1,4 @@
-<img src="./public/logo.png" width="20">
+<img src="./public/logo.png" width="100">
 
 # CigarCounter 
 
