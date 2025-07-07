@@ -6,8 +6,7 @@ import { fileURLToPath, URL } from 'node:url'
 // https://vite.dev/config/
 
 export default defineConfig(({mode}) => {
-    process.env = {...process.env, ...loadEnv(mode, process.cwd())};
-
+    const env = loadEnv(mode, process.cwd(), '')
     return {
         plugins: [vue(), tailwindcss()],
         resolve: {
@@ -16,7 +15,7 @@ export default defineConfig(({mode}) => {
             },
         },
         define: {
-            "__API_KEY__": JSON.stringify(process.env.API_KEY)
+            "__API_KEY__": env.API_KEY)
         }
     };
 });
