@@ -1,7 +1,9 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import 'dotenv/config'
 
+console.log(process.env.API_KEY)
 const firebaseConfig = {
   apiKey: process.env.API_KEY,
   authDomain: "cigarcounter-f927f.firebaseapp.com",
