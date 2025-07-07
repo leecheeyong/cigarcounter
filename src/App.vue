@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import { RouterView } from 'vue-router'
 import { useAuth } from './composables/useAuth'
 
@@ -13,6 +12,5 @@ const { loading } = useAuth()
       <p class="text-gray-600">Loading...</p>
     </div>
   </div>
-  
   <RouterView v-else />
 </template>

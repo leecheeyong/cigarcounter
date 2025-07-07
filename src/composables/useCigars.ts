@@ -16,8 +16,6 @@ import { useAuth } from './useAuth'
 export interface CigarEntry {
   id: string
   userId: string
-  brand: string
-  type: string
   smokedAt: Timestamp
   notes?: string
   rating?: number
@@ -77,7 +75,6 @@ export const useCigars = () => {
           ...doc.data()
         })) as CigarEntry[]
         
-        // Sort manually in case Firestore ordering fails
         cigars.value.sort((a, b) => {
           const aTime = a.smokedAt?.toDate ? a.smokedAt.toDate().getTime() : 0
           const bTime = b.smokedAt?.toDate ? b.smokedAt.toDate().getTime() : 0
@@ -85,11 +82,10 @@ export const useCigars = () => {
         })
         
         console.log('Cigars loaded and sorted:', cigars.value.length)
-        error.value = '' // Clear any previous errors
+        error.value = '' 
       }, (err) => {
         console.error('Error with ordered query, trying fallback:', err)
         
-        // Fallback: query without ordering if index doesn't exist
         const qFallback = query(
           collection(db, 'cigars'),
           where('userId', '==', user.value!.uid)
@@ -102,7 +98,6 @@ export const useCigars = () => {
             ...doc.data()
           })) as CigarEntry[]
           
-          // Sort manually by date
           cigars.value.sort((a, b) => {
             const aTime = a.smokedAt?.toDate ? a.smokedAt.toDate().getTime() : 0
             const bTime = b.smokedAt?.toDate ? b.smokedAt.toDate().getTime() : 0
@@ -110,7 +105,7 @@ export const useCigars = () => {
           })
           
           console.log('Cigars loaded with fallback query:', cigars.value.length)
-          error.value = '' // Clear any previous errors
+          error.value = '' 
         }, (fallbackErr) => {
           console.error('Error loading cigars with fallback:', fallbackErr)
           error.value = fallbackErr.message

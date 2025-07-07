@@ -12,7 +12,6 @@ const user = ref<User | null>(null)
 const loading = ref(true)
 const initialized = ref(false)
 
-// Initialize auth state listener once
 if (!initialized.value) {
   onAuthStateChanged(auth, (newUser) => {
     user.value = newUser

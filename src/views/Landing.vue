@@ -67,8 +67,8 @@ const navigateToApp = () => {
 
     <footer class="bg-gray-900 text-white py-8 px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
-        <p class="text-gray-400">
-          Made with ❤️ by Chee Yong Lee, Promoting health awareness through tracking.
+        <p class="text-gray-400 text-sm">
+          Made with ❤️ by <a class="underline decoration-sky-500" href="https://github.com/leecheeyong">Chee Yong Lee</a>, Promoting health awareness through tracking.<br> Open source on <a class="underline decoration-sky-500" href="https://github.com/leecheeyong/cigarcounter" target="_blank">Github</a> under the terms of the <a class="underline decoration-sky-500" href="https://github.com/leecheeyong/cigarcounter/blob/main/LICENSE" target="_blank">MIT License</a>.
         </p>
       </div>
     </footer>
