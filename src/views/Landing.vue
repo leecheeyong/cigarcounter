@@ -58,42 +58,104 @@ const navigateToApp = () => {
       </div>
     </section>
 
-    <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">
+          What Happens When You Quit
+        </h2>
+        <div class="grid sm:grid-cols-2 gap-6 text-left">
+          <div class="border border-gray-200 rounded-lg p-5">
+            <h3 class="font-semibold text-gray-800">After 20 minutes</h3>
+            <p class="text-sm text-gray-600">
+              Heart rate and blood pressure begin to drop.
+            </p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-5">
+            <h3 class="font-semibold text-gray-800">After 24 hours</h3>
+            <p class="text-sm text-gray-600">
+              Carbon monoxide levels in your blood return to normal.
+            </p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-5">
+            <h3 class="font-semibold text-gray-800">
+              After 2 weeks to 3 months
+            </h3>
+            <p class="text-sm text-gray-600">
+              Circulation improves, and lung function increases.
+            </p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-5">
+            <h3 class="font-semibold text-gray-800">After 1 year</h3>
+            <p class="text-sm text-gray-600">
+              Risk of heart disease drops to half that of a smoker.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-2xl font-bold text-gray-800 mb-4">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">
           Learn More from Trusted Sources
         </h2>
-        <p class="text-gray-600 mb-4 text-base sm:text-lg">
-          Reliable health organizations and research on tobacco harm:
+        <p class="text-gray-600 text-base sm:text-lg mb-10">
+          Explore global health data on tobacco use and quitting methods.
         </p>
-        <ul class="text-blue-700 underline space-y-2 text-sm sm:text-base">
-          <li>
-            <a
-              href="https://www.who.int/news-room/fact-sheets/detail/tobacco"
-              target="_blank"
-              >🌐 WHO: Global Tobacco Facts</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://www.cdc.gov/tobacco/data_statistics/fact_sheets/index.htm"
-              target="_blank"
-              >📊 CDC: Smoking & Tobacco Data</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://www.cancer.gov/about-cancer/causes-prevention/risk/tobacco"
-              target="_blank"
-              >🎗️ National Cancer Institute: Smoking Risks</a
-            >
-          </li>
-          <li>
-            <a href="https://tobaccoatlas.org/" target="_blank"
-              >📚 Tobacco Atlas: Worldwide Impact</a
-            >
-          </li>
-        </ul>
+
+        <div class="space-y-4 text-left">
+          <a
+            href="https://www.who.int/news-room/fact-sheets/detail/tobacco"
+            target="_blank"
+            class="block border border-gray-200 rounded-lg px-5 py-4 hover:bg-gray-50 transition"
+          >
+            <h3 class="text-base font-semibold text-gray-800">
+              World Health Organization (WHO)
+            </h3>
+            <p class="text-sm text-gray-600">
+              Global tobacco use stats: 7+ million deaths per year, including
+              1.6 million from secondhand smoke.
+            </p>
+          </a>
+
+          <a
+            href="https://www.cdc.gov/tobacco/index.html"
+            target="_blank"
+            class="block border border-gray-200 rounded-lg px-5 py-4 hover:bg-gray-50 transition"
+          >
+            <h3 class="text-base font-semibold text-gray-800">
+              Centers for Disease Control and Prevention (CDC)
+            </h3>
+            <p class="text-sm text-gray-600">
+              Tobacco is the leading cause of preventable disease & 480,000
+              deaths/year in the U.S.
+            </p>
+          </a>
+
+          <a
+            href="https://www.cancer.gov/about-cancer/causes-prevention/risk/tobacco"
+            target="_blank"
+            class="block border border-gray-200 rounded-lg px-5 py-4 hover:bg-gray-50 transition"
+          >
+            <h3 class="text-base font-semibold text-gray-800">
+              National Cancer Institute (NCI)
+            </h3>
+            <p class="text-sm text-gray-600">
+              Science-backed insights on tobacco's role in cancer.
+            </p>
+          </a>
+
+          <a
+            href="https://tobaccoatlas.org/"
+            target="_blank"
+            class="block border border-gray-200 rounded-lg px-5 py-4 hover:bg-gray-50 transition"
+          >
+            <h3 class="text-base font-semibold text-gray-800">Tobacco Atlas</h3>
+            <p class="text-sm text-gray-600">
+              Interactive global data covering tobacco use, costs, and policies.
+            </p>
+          </a>
+        </div>
       </div>
     </section>
 

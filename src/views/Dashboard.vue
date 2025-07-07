@@ -22,7 +22,6 @@ const healthFacts = [
 
 let unsubscribe: (() => void) | undefined;
 
-// Watch for authentication changes
 watch(
   isAuthenticated,
   (authenticated) => {
@@ -33,7 +32,6 @@ watch(
   { immediate: true },
 );
 
-// Watch for user changes to load cigars
 watch(
   user,
   (currentUser) => {
@@ -62,7 +60,6 @@ const handleLogout = async () => {
   router.push("/");
 };
 
-// Simple form state
 import { ref } from "vue";
 const showForm = ref(false);
 const notes = ref("");
@@ -115,7 +112,13 @@ const getRatingStars = (rating?: number) => {
     <header class="bg-white shadow-sm">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
-          <h1 class="text-2xl font-bold text-blue-900">CigarCounter</h1>
+          <h1 class="text-2xl font-bold text-blue-900 inline-flex">
+            <img
+              src="/logo.png"
+              alt="CigarCounter Logo"
+              class="h-10 w-10 mr-1"
+            /><span class="pt-1">CigarCounter</span>
+          </h1>
           <button @click="handleLogout" class="btn btn-secondary text-sm">
             Logout
           </button>
@@ -158,9 +161,7 @@ const getRatingStars = (rating?: number) => {
         <div class="bg-red-50 border border-red-200 rounded-lg p-4">
           <p class="text-red-800 text-sm">
             <strong>Health Reminder:</strong>
-            {{
-              healthFacts[Math.floor(Math.random() * healthFacts.length)]
-            }}
+            {{ healthFacts[Math.floor(Math.random() * healthFacts.length)] }}
             You've logged {{ stats.total }} cigarettes ({{
               Math.round(stats.total * 11)
             }}
