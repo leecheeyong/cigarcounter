@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-console.log(import.meta.env.API_KEY)
+console.log(import.meta.env)
 const firebaseConfig = {
   apiKey: import.meta.env.API_KEY,
   authDomain: "cigarcounter-f927f.firebaseapp.com",
