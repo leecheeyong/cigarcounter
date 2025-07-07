@@ -1,52 +1,54 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-import { useAuth } from '../composables/useAuth'
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import { useAuth } from "../composables/useAuth";
 
-const router = useRouter()
-const { login, register } = useAuth()
+const router = useRouter();
+const { login, register } = useAuth();
 
-const isLogin = ref(true)
-const email = ref('')
-const password = ref('')
-const confirmPassword = ref('')
-const loading = ref(false)
-const error = ref('')
+const isLogin = ref(true);
+const email = ref("");
+const password = ref("");
+const confirmPassword = ref("");
+const loading = ref(false);
+const error = ref("");
 
 const toggleMode = () => {
-  isLogin.value = !isLogin.value
-  error.value = ''
-}
+  isLogin.value = !isLogin.value;
+  error.value = "";
+};
 
 const handleSubmit = async () => {
   if (!isLogin.value && password.value !== confirmPassword.value) {
-    error.value = 'Passwords do not match'
-    return
+    error.value = "Passwords do not match";
+    return;
   }
-  
-  loading.value = true
-  error.value = ''
-  
-  const result = isLogin.value 
+
+  loading.value = true;
+  error.value = "";
+
+  const result = isLogin.value
     ? await login(email.value, password.value)
-    : await register(email.value, password.value)
-  
+    : await register(email.value, password.value);
+
   if (result.success) {
-    router.push('/dashboard')
+    router.push("/dashboard");
   } else {
-    error.value = result.error
+    error.value = result.error;
   }
-  
-  loading.value = false
-}
+
+  loading.value = false;
+};
 
 const goBack = () => {
-  router.push('/')
-}
+  router.push("/");
+};
 </script>
 
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-amber-50 px-4">
+  <div
+    class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-amber-50 px-4"
+  >
     <div class="max-w-md w-full space-y-8">
       <div class="text-center">
         <button
@@ -58,18 +60,21 @@ const goBack = () => {
         <h1 class="text-4xl font-bold text-blue-900 mb-2">CigarCounter</h1>
         <p class="text-gray-600">Track your consumption, improve your health</p>
       </div>
-      
+
       <div class="card">
         <form @submit.prevent="handleSubmit" class="space-y-6">
           <div>
             <h2 class="text-2xl font-semibold text-center mb-6">
-              {{ isLogin ? 'Welcome Back' : 'Create Account' }}
+              {{ isLogin ? "Welcome Back" : "Create Account" }}
             </h2>
           </div>
-          
+
           <div class="space-y-4">
             <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+              <label
+                for="email"
+                class="block text-sm font-medium text-gray-700 mb-1"
+              >
                 Email Address
               </label>
               <input
@@ -81,9 +86,12 @@ const goBack = () => {
                 placeholder="Enter your email"
               />
             </div>
-            
+
             <div>
-              <label for="password" class="block text-sm font-medium text-gray-700 mb-1">
+              <label
+                for="password"
+                class="block text-sm font-medium text-gray-700 mb-1"
+              >
                 Password
               </label>
               <input
@@ -95,9 +103,12 @@ const goBack = () => {
                 placeholder="Enter your password"
               />
             </div>
-            
+
             <div v-if="!isLogin">
-              <label for="confirmPassword" class="block text-sm font-medium text-gray-700 mb-1">
+              <label
+                for="confirmPassword"
+                class="block text-sm font-medium text-gray-700 mb-1"
+              >
                 Confirm Password
               </label>
               <input
@@ -110,28 +121,39 @@ const goBack = () => {
               />
             </div>
           </div>
-          
-          <div v-if="error" class="bg-red-50 border border-red-200 rounded-lg p-3">
+
+          <div
+            v-if="error"
+            class="bg-red-50 border border-red-200 rounded-lg p-3"
+          >
             <p class="text-red-700 text-sm">{{ error }}</p>
           </div>
-          
+
           <button
             type="submit"
             :disabled="loading"
             class="btn btn-primary w-full"
           >
-            {{ loading ? 'Please wait...' : (isLogin ? 'Sign In' : 'Create Account') }}
+            {{
+              loading
+                ? "Please wait..."
+                : isLogin
+                  ? "Sign In"
+                  : "Create Account"
+            }}
           </button>
-          
+
           <div class="text-center">
             <p class="text-gray-600">
-              {{ isLogin ? "Don't have an account?" : "Already have an account?" }}
+              {{
+                isLogin ? "Don't have an account?" : "Already have an account?"
+              }}
               <button
                 type="button"
                 @click="toggleMode"
                 class="text-blue-600 hover:text-blue-700 font-medium ml-1"
               >
-                {{ isLogin ? 'Sign up' : 'Sign in' }}
+                {{ isLogin ? "Sign up" : "Sign in" }}
               </button>
             </p>
           </div>
