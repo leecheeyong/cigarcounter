@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { onUnmounted, watch } from "vue";
 import { useRouter } from "vue-router";
 import { useCigars } from "../composables/useCigars";
@@ -20,7 +20,7 @@ const healthFacts = [
   "Quitting smoking greatly reduces the risk of developing smoking-related diseases and improves overall health, regardless of age.",
 ];
 
-let unsubscribe: (() => void) | undefined;
+let unsubscribe;
 
 watch(
   isAuthenticated,
@@ -89,7 +89,7 @@ const handleSubmit = async () => {
   }
 };
 
-const formatDate = (timestamp: any) => {
+const formatDate = (timestamp) => {
   if (!timestamp) return "Unknown date";
   const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
   return new Intl.DateTimeFormat("en-US", {
@@ -101,7 +101,7 @@ const formatDate = (timestamp: any) => {
   }).format(date);
 };
 
-const getRatingStars = (rating?: number) => {
+const getRatingStars = (rating) => {
   if (!rating) return "";
   return "★".repeat(rating) + "☆".repeat(5 - rating);
 };

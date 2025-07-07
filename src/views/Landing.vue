@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { useRouter } from "vue-router";
 import { useAuth } from "../composables/useAuth";
 import { ArrowRightIcon } from "@heroicons/vue/24/outline";

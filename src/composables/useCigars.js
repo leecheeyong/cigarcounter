@@ -13,25 +13,14 @@ import {
 import { db } from "../firebase/config";
 import { useAuth } from "./useAuth";
 
-export interface CigarEntry {
-  id: string;
-  userId: string;
-  smokedAt: Timestamp;
-  notes?: string;
-  rating?: number;
-  cost?: number;
-}
-
-const cigars = ref<CigarEntry[]>([]);
+const cigars = ref([]);
 const loading = ref(false);
 const error = ref("");
 
 export const useCigars = () => {
   const { user } = useAuth();
 
-  const addCigar = async (
-    cigarData: Omit<CigarEntry, "id" | "userId" | "smokedAt">,
-  ) => {
+  const addCigar = async (cigarData) => {
     if (!user.value) {
       return { success: false, error: "User not authenticated" };
     }
@@ -47,7 +36,7 @@ export const useCigars = () => {
       });
 
       return { success: true };
-    } catch (err: any) {
+    } catch (err) {
       console.error("Error adding cigar:", err);
       error.value = err.message;
       return { success: false, error: err.message };
@@ -81,7 +70,7 @@ export const useCigars = () => {
           cigars.value = snapshot.docs.map((doc) => ({
             id: doc.id,
             ...doc.data(),
-          })) as CigarEntry[];
+          }));
 
           cigars.value.sort((a, b) => {
             const aTime = a.smokedAt?.toDate
@@ -101,7 +90,7 @@ export const useCigars = () => {
 
           const qFallback = query(
             collection(db, "cigars"),
-            where("userId", "==", user.value!.uid),
+            where("userId", "==", user?.value?.uid),
           );
 
           return onSnapshot(
@@ -115,7 +104,7 @@ export const useCigars = () => {
               cigars.value = snapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data(),
-              })) as CigarEntry[];
+              }));
 
               cigars.value.sort((a, b) => {
                 const aTime = a.smokedAt?.toDate
@@ -140,7 +129,7 @@ export const useCigars = () => {
           );
         },
       );
-    } catch (err: any) {
+    } catch (err) {
       console.error("Error setting up cigars listener:", err);
       error.value = err.message;
     }

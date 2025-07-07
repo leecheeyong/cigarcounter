@@ -4,11 +4,10 @@ import {
   createUserWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
-  User,
 } from "firebase/auth";
 import { auth } from "../firebase/config";
 
-const user = ref<User | null>(null);
+const user = ref(null);
 const loading = ref(true);
 const initialized = ref(false);
 
@@ -23,20 +22,20 @@ if (!initialized.value) {
 export const useAuth = () => {
   const isAuthenticated = computed(() => !!user.value);
 
-  const login = async (email: string, password: string) => {
+  const login = async (email, password) => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       return { success: true };
-    } catch (error: any) {
+    } catch (error) {
       return { success: false, error: error.message };
     }
   };
 
-  const register = async (email: string, password: string) => {
+  const register = async (email, password) => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       return { success: true };
-    } catch (error: any) {
+    } catch (error) {
       return { success: false, error: error.message };
     }
   };
@@ -45,7 +44,7 @@ export const useAuth = () => {
     try {
       await signOut(auth);
       return { success: true };
-    } catch (error: any) {
+    } catch (error) {
       return { success: false, error: error.message };
     }
   };
