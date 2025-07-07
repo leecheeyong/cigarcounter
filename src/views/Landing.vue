@@ -58,36 +58,45 @@ const navigateToApp = () => {
       </div>
     </section>
 
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-10">
           What Happens When You Quit
         </h2>
-        <div class="grid sm:grid-cols-2 gap-6 text-left">
-          <div class="border border-gray-200 rounded-lg p-5">
-            <h3 class="font-semibold text-gray-800">After 20 minutes</h3>
-            <p class="text-sm text-gray-600">
+
+        <div
+          class="flex flex-col sm:flex-row sm:justify-between gap-6 text-left"
+        >
+          <div
+            class="flex-1 bg-gray-50 border border-gray-200 rounded-md p-4 text-sm"
+          >
+            <p class="text-blue-700 font-semibold mb-1">After 20 minutes</p>
+            <p class="text-gray-600">
               Heart rate and blood pressure begin to drop.
             </p>
           </div>
-          <div class="border border-gray-200 rounded-lg p-5">
-            <h3 class="font-semibold text-gray-800">After 24 hours</h3>
-            <p class="text-sm text-gray-600">
-              Carbon monoxide levels in your blood return to normal.
+          <div
+            class="flex-1 bg-gray-50 border border-gray-200 rounded-md p-4 text-sm"
+          >
+            <p class="text-blue-700 font-semibold mb-1">After 24 hours</p>
+            <p class="text-gray-600">
+              Carbon monoxide level in blood drops to normal.
             </p>
           </div>
-          <div class="border border-gray-200 rounded-lg p-5">
-            <h3 class="font-semibold text-gray-800">
-              After 2 weeks to 3 months
-            </h3>
-            <p class="text-sm text-gray-600">
-              Circulation improves, and lung function increases.
+          <div
+            class="flex-1 bg-gray-50 border border-gray-200 rounded-md p-4 text-sm"
+          >
+            <p class="text-blue-700 font-semibold mb-1">2 weeks - 3 months</p>
+            <p class="text-gray-600">
+              Lung function improves and circulation increases.
             </p>
           </div>
-          <div class="border border-gray-200 rounded-lg p-5">
-            <h3 class="font-semibold text-gray-800">After 1 year</h3>
-            <p class="text-sm text-gray-600">
-              Risk of heart disease drops to half that of a smoker.
+          <div
+            class="flex-1 bg-gray-50 border border-gray-200 rounded-md p-4 text-sm"
+          >
+            <p class="text-blue-700 font-semibold mb-1">After 1 year</p>
+            <p class="text-gray-600">
+              Risk of heart disease is halved compared to smokers.
             </p>
           </div>
         </div>
