@@ -10,8 +10,5 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  },
-  define: {
-    "API_KEY": String(process.env.API_KEY)
   }
 })
