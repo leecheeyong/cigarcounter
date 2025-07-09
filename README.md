@@ -7,9 +7,7 @@
 ![preview screenshot](./public/preview.webp)
 
 > [!NOTE]  
-> Give this project a try by signing up an account [here](https://cigarcounter.vercel.app/auth), feedbacks are welcomed in the [issues](https://github.com/leecheeyong/cigarcounter/issues).
->
-> Give this project a ⭐ if you like it 😄
+> Give this project a try by signing up an account [here](https://cigarcounter.vercel.app/auth), feedbacks are welcomed in the [issues](https://github.com/leecheeyong/cigarcounter/issues). Give this project a ⭐ if you like it 😄
 
 ## 🌟 Features
 
