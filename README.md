@@ -37,7 +37,7 @@ npm run dev
 
 ### 3. 📄 Add Firebase config
 
-Edit the `src/firebase/config.ts` file, replace with your Firebase credentials
+Edit the `src/firebase/config.js` file, replace with your Firebase credentials
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](/LICENSE) file for details.
